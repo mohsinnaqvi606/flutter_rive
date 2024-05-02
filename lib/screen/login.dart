@@ -97,12 +97,13 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             const SizedBox(height: 50),
             SizedBox(
-              height: 55,
+              height: 60,
               child: TextFormField(
                 onTap: lookAround,
                 onChanged: ((value) => moveEyes(value)),
                 onTapOutside: (event) {
                   FocusScope.of(context).requestFocus(FocusNode());
+                  isChecking?.change(false);
                 },
                 maxLines: 1,
                 controller: emailController,
