@@ -40,8 +40,8 @@ class LoginView extends StatelessWidget {
     return Obx(
       () => viewModel.isInitialized.value
           ? Container(
-              padding: const EdgeInsets.symmetric(vertical: 40.0),
-              height: 300,
+              padding: const EdgeInsets.symmetric(vertical: 50.0),
+              height: 370,
               child: Rive(
                 artboard: viewModel.artBoard!,
                 fit: BoxFit.contain,
