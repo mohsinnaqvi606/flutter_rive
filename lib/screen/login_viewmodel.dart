@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -47,7 +49,7 @@ class LoginViewModel extends GetxController {
     }
 
     artBoard = art;
-    isInitialized.value = true;
+     isInitialized.value = true;
   }
 
   @override

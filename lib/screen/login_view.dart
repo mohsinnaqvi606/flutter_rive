@@ -19,7 +19,6 @@ class LoginView extends StatelessWidget {
             artBoard(context),
             textField(
               hint: 'Email',
-              obscureText: false,
               controller: viewModel.emailController,
               onTap: () => viewModel.lookAround(),
               onChange: (value) => viewModel.moveEyes(value),
@@ -27,8 +26,8 @@ class LoginView extends StatelessWidget {
             textField(
               hint: 'Password',
               obscureText: true,
-              onTap: () => viewModel.handsUpOnEyes(),
               controller: viewModel.passController,
+              onTap: () => viewModel.handsUpOnEyes(),
             ),
             loginBtn(),
           ],
@@ -38,11 +37,10 @@ class LoginView extends StatelessWidget {
   }
 
   Widget artBoard(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 40.0),
-      child: Obx(() => viewModel.isInitialized.value
-          ? SizedBox(
-              width: MediaQuery.sizeOf(context).width - 150,
+    return Obx(
+      () => viewModel.isInitialized.value
+          ? Container(
+              padding: const EdgeInsets.symmetric(vertical: 40.0),
               height: 300,
               child: Rive(
                 artboard: viewModel.artBoard!,
@@ -50,9 +48,9 @@ class LoginView extends StatelessWidget {
               ),
             )
           : const Padding(
-              padding: EdgeInsets.only(top: 265.0),
+              padding: EdgeInsets.symmetric(vertical: 120.0),
               child: CircularProgressIndicator(),
-            )),
+            ),
     );
   }
 
